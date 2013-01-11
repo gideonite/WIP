@@ -14,7 +14,8 @@ a:not(:hover) {
 }
 
 .stack {
-  background: #222 url(cartographer.png);
+#  background: #222 url(cartographer.png);
+  background: #ffe;
   color: #fff;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -28,6 +29,9 @@ a:not(:hover) {
   width: 1280px;
   -webkit-transform: translate3d(0,0,0);
 }
+.stack {
+    color: grey;
+}
 
 .active {
   box-shadow: 0px 4px 8px rgba(0,0,0,.5);
@@ -35,9 +39,9 @@ a:not(:hover) {
   position: fixed;
 }
 
-.grey {
-  color: #969696;
-}
+#.grey {
+#  color: #969696;
+#}
 
 @media
 screen and (max-device-width: 1024px) {
