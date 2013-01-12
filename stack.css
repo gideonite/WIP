@@ -33,6 +33,11 @@ a:not(:hover) {
     color: grey;
 }
 
+.highlight-box {
+    position:absolute;
+    border:solid red 4px;
+}
+
 .active {
   box-shadow: 0px 4px 8px rgba(0,0,0,.5);
   display: block;
