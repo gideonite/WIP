@@ -74,8 +74,8 @@ Can you get an oncoprint into one of these slides?  You could first try just
 copying it, and then maybe try actually making an AJAX call.
 
 ### Big Picture
-* backend refactoring: separation of data and data visualization
 
+* backend refactoring: separation of data and data visualization
 * data transformation in the browser, e.g. oncoprint sorting
 
 ### Future Oncoprint
