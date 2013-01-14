@@ -43,8 +43,34 @@
 </section>
 
 <section>
-<h1>CBS</h1>
-...say something about the algorithm.  Quote some its input.
+
+<h3>Why segmentation?</h3>
+<p>Noise in probe level data from SNP and CGH data.</p>
+
+<a href="cbs_out_plot.png">cbs output plot</a>
+
+<p>There are segments here, but where are they?  And how can we automate this?</p>
+
+</section>
+(genome location vs. log ratio)
+
+<section>
+<h3>Why GISTIC?</h3>
+<p>How do we find the "significant" <b>segments</b> in a population?</p>
+<p>How do we find the "significant" <b>genes</b> in a population?</p>
+</section>
+
+<section>
+<u><b>C</b>ircular</u> / <u><b>B</b>inary <b>S</b>egmentation</u>
+
+<p>Looking for breakpoints by taking MLE on a list of Gaussian distributions.</p>
+
+<ul>
+    <li>Binary Segmentation: Searches for <b>single</b> breakpoints (<a
+        href="http://projecteuclid.org/euclid.aos/1176343001">1975</a>)</li>
+    <br/>
+    <li> Circular: Searches for <b>pairs</b> of breakpoints (a circle ends where it starts)</li>
+</ul>
 </section>
 
 <section>
@@ -62,7 +88,16 @@
 </section>
 
 <section>
-<h1>Surprise: step 1 is not easy &#9785</h1>
+Successfully forked over BIC's Agilent 244K pipeline.
+<a href="cbs_out_plot.png">cbs output plot</a>.
+</section>
+
+GISTIC works if you get the input files "just right."  Even on TCGA Level_3
+data (CBS segments), there may be a probe or two which is off and will cause
+GISTIC to fail with an unhelpful error message.
+
+<section>
+<h1>Shouldn't be too hard to port over to AffySNP6.0...but surprise: step 1 is not easy &#9785</h1>
 Need to map:<pre>
      (chromosome, position) &rlarr; probe id
 e.g. (1, 123456)            &rlarr; CN_111111
@@ -107,6 +142,7 @@ CN_473964   1   61808
 <ol>
     <li>Overview</li>
     <li>Demo</li>
+    <li>d3.js</li>
     <li>Oncoprint Future</li>
     <li>Portal Future</li>
 </ol>

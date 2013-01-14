@@ -62,6 +62,48 @@ Stuck on
 
 ### In Progress
 
+### Why do we do CBS and GISTIC?
+
+#### Why do we do CBS?
+
+We get a list of probe level measurements.
+<a href=http://www.chem.agilent.com/Library/posters/Public/Copy_Number_Variant_Detection_Using_Agilent_CGH_Platforms.pdf>platform info</a>
+
+But, there is noise in those measurments.  Two probes on the same segment will
+not necessarily have the same signal due to the noise.  So given all of these
+measurements, we need to find the segments.  (example .png)
+
+(genome location vs. log ratio)
+
+**What is CBS?**
+
+Circular Binary Segmentation:
+
+*Binary Segmentation* has existed since 1975
+(<http://projecteuclid.org/euclid.aos/1176343001>).  Basically, the way it
+works is by using MLE to find where a particular mean in a list of means
+differs from a reference.  This is a search for signle break points.
+
+*Circular* is Olshen and Venkratraman's extension in which you search, not for
+single break points, but for pairs of breakpoints. "Circle" is a nice metaphor
+because if you are travelling around in signal strength space, then pairs of
+breakpoints should have the same value and should therefore form a "circle"
+virtue of the fact that they should have the same signal.  This is said to
+improve the "detection of of a small change buried in the middle of a large
+segment."
+
+#### Why do we do GISTIC?
+
+* recurrence.
+* bonus: gene calls.
+
+Technically, the only thing that GISTIC should be doing is finding the ROIs
+(Regions of Interest), the geometrical segments of the genome that are reccurent
+in population.  But, GISTIC also provides the bonus of trying to figure out the
+most likely genes (so says Niki). <http://genomebiology.com/2011/12/4/R41>
+
+What's the word for this?  Gene call?
+
 ## Oncoprint
 
 ### What Was Done
@@ -101,7 +143,7 @@ cBio Portal Team:
 * alphabetical order
 
 Giovanni who worked with me on the Pipeline.
-Yupu and others at the Bioinformatics Core.
+Liang Yupu and others at the Bioinformatics Core.
 
 
 
