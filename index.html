@@ -34,8 +34,8 @@
 </section>
 
 <section>
-<h1>CN Pipeline</h1>
-<p class="caption">CBS &rarr; GISTIC</p>
+<h1 >CN Pipeline</h1>
+<p class="caption" style="margin:40px">CBS &rarr; GISTIC</p>
 <ul>
     <li>Circular Binary Segmentation (CBS)</li>
     <li>Genomic Identification of Significant Targets in Cancer (GISTIC)</li>
@@ -57,14 +57,34 @@
 <ol>
     <li>install and run algorithms individually</li>
     <li>pipe together</li>
-    <li>wrapper(s) for the <a href="http://galaxyproject.org/">Galaxy webserver</a></li>
+    <li> <a href="http://galaxyproject.org/">Galaxy webserver</a> wrapper(s)</li>
 </ol>
 </section>
 
 <section>
-<h1>Surprise, stuck at step 1 &#9785</h1>
-(chromosome, position) &rlarr; probe id.<br/>
-e.g. (1, 123456) &rlarr; CN_111111
+<h1>Surprise: step 1 is not easy &#9785</h1>
+Need to map:<pre>
+     (chromosome, position) &rlarr; probe id
+e.g. (1, 123456)            &rlarr; CN_111111
+</pre>
+</section>
+
+<section>
+<h1 style="float:left;">Why?</h1>
+
+<div style="position: relative; top:-80px; float:right;">
+    <u>TCGA Level_2 Data:</u>
+    <pre>probe id    signal
+CN_473963   1.492
+CN_473964   1.906
+</pre>
+
+    <u>One of GISTIC's inputs:</u>
+<pre>#name       chr position
+CN_473963   1   61735
+CN_473964   1   61808
+</pre>
+</div>
 </section>
 
 <ul>
@@ -72,18 +92,13 @@ e.g. (1, 123456) &rlarr; CN_111111
     probe locations</li>
     <li>GISTIC requires a mapping file</li>
 </ul>
-<pre>
-Composite Element REF   Signal
-CN_473963               1.492
-CN_473964               1.906
-</pre>
-
 
 <section>
-<h1>Future of the Pipeline</h1>
+<h1>In Progress</h1>
 <ul>
-    <li> Get it running already! </li>
-    <li> Use Galaxy! </li>
+    <li>Well, if the Broad can do it...</li>
+    <li><code>map_probes.py</code></li>
+    <li>access to Lowe's Galaxy server</li>
 </ul>
 </section>
 
