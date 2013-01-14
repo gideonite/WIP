@@ -35,26 +35,49 @@
 
 <section>
 <h1>CN Pipeline</h1>
-<ol>
+<p class="caption">CBS &rarr; GISTIC</p>
+<ul>
     <li>Circular Binary Segmentation (CBS)</li>
     <li>Genomic Identification of Significant Targets in Cancer (GISTIC)</li>
-</ol>
+</ul>
 </section>
 
 <section>
 <h1>CBS</h1>
-...
+...say something about the algorithm.  Quote some its input.
 </section>
 
 <section>
 <h1>GISTIC</h1>
-...
+...say something about the algorithm.  Quote some its input.
 </section>
 
 <section>
-<h1>Pipeline</h1>
-merge CBS files, pipe them into GISTIC
+<h1>TODO:</h1>
+<ol>
+    <li>install and run algorithms individually</li>
+    <li>pipe together</li>
+    <li>wrapper(s) for the <a href="http://galaxyproject.org/">Galaxy webserver</a></li>
+</ol>
 </section>
+
+<section>
+<h1>Surprise, stuck at step 1 &#9785</h1>
+(chromosome, position) &rlarr; probe id.<br/>
+e.g. (1, 123456) &rlarr; CN_111111
+</section>
+
+<ul>
+    <li>TCGA Level_2 -- only probe ids, but CBS <b>requires</b>
+    probe locations</li>
+    <li>GISTIC requires a mapping file</li>
+</ul>
+<pre>
+Composite Element REF   Signal
+CN_473963               1.492
+CN_473964               1.906
+</pre>
+
 
 <section>
 <h1>Future of the Pipeline</h1>

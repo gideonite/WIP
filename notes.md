@@ -102,3 +102,13 @@ cBio Portal Team:
 
 Giovanni who worked with me on the Pipeline.
 Yupu and others at the Bioinformatics Core.
+
+
+
+Need marker files, like this:<pre>
+#name       chromosome  position
+CN_473963   1           61735
+CN_473964   1           61808
+CN_473965   1           61823
+</pre>
+
