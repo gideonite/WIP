@@ -81,7 +81,7 @@
 <section>
 <h1>TODO:</h1>
 <ol>
-    <li>install and run algorithms individually</li>
+    <li>** install and run algorithms individually **</li>
     <li>pipe together</li>
     <li> <a href="http://galaxyproject.org/">Galaxy webserver</a> wrapper(s)</li>
 </ol>
@@ -92,41 +92,35 @@ Successfully forked over BIC's Agilent 244K pipeline.
 <a href="cbs_out_plot.png">cbs output plot</a>.
 </section>
 
-GISTIC works if you get the input files "just right."  Even on TCGA Level_3
-data (CBS segments), there may be a probe or two which is off and will cause
-GISTIC to fail with an unhelpful error message.
-
 <section>
-<h1>Shouldn't be too hard to port over to AffySNP6.0...but surprise: step 1 is not easy &#9785</h1>
-Need to map:<pre>
-     (chromosome, position) &rlarr; probe id
-e.g. (1, 123456)            &rlarr; CN_111111
-</pre>
+<h1>AffySNP6.0 Surprise: step 1 is not easy &#9785</h1>
 </section>
 
 <section>
-<h1 style="float:left;">Why?</h1>
+<h1 style="float:left;">Why?<br/><br/>>CBS</h1>
 
-<div style="position: relative; top:-80px; float:right;">
+<div style="position: relative; top:-80px; float:right; font-size:40px; margin-top:100px;">
     <u>TCGA Level_2 Data:</u>
     <pre>probe id    signal
 CN_473963   1.492
 CN_473964   1.906
 </pre>
+    <u>CBS input:</u>
+    <pre>probe id | chr | pos | signal(s)</pre>
 
-    <u>One of GISTIC's inputs:</u>
+</section>
+
+<section>
+<h1 style="float:left;">Why?<br/><br/>>GISTIC</h1>
+
+<div style="position: relative; top:-80px; float:right; font-size:40px; margin-top:100px; margin-right:100px;">
+    <u>GISTIC markerfile:</u>
 <pre>#name       chr position
 CN_473963   1   61735
 CN_473964   1   61808
 </pre>
 </div>
 </section>
-
-<ul>
-    <li>TCGA Level_2 -- only probe ids, but CBS <b>requires</b>
-    probe locations</li>
-    <li>GISTIC requires a mapping file</li>
-</ul>
 
 <section>
 <h1>In Progress</h1>
@@ -135,6 +129,13 @@ CN_473964   1   61808
     <li><code>map_probes.py</code></li>
     <li>access to Lowe's Galaxy server</li>
 </ul>
+</section>
+
+<section>
+<h1><code>map_probes.py</code></h1><pre>
+     (chromosome, position) &rlarr; probe id
+e.g. (1, 123456)            &rlarr; CN_111111
+</pre>
 </section>
 
 <section>

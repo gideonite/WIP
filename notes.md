@@ -104,6 +104,10 @@ most likely genes (so says Niki). <http://genomebiology.com/2011/12/4/R41>
 
 What's the word for this?  Gene call?
 
+GISTIC works if you get the input files "just right."  Even on TCGA Level_3
+data (CBS segments), there may be a probe or two which is off and will cause
+GISTIC to fail with an unhelpful error message.
+
 ## Oncoprint
 
 ### What Was Done
