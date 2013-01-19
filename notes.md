@@ -108,6 +108,65 @@ GISTIC works if you get the input files "just right."  Even on TCGA Level_3
 data (CBS segments), there may be a probe or two which is off and will cause
 GISTIC to fail with an unhelpful error message.
 
+#### GISTIC supplementary materials
+
+GISTIC2.0 is an iterative MLE algorithm (whatever that is, I suppose you might
+want to think about Expectation Maximization):
+
+You are given a set of breakpoints, you're job is to estimate the CN events
+that took place.  Say you have just 3 breakpoints for example.  What could have
+happened?  It could have been just one event (the middle one), or it could have
+been two events.  Of course, you have more than just breakpoints, you also have
+amplitudes help you start to think about this...
+
+
+1. *base case:* Construct the base background rate by using a simplified
+   deconstruction with the following two assumptions:
+
+   a. break points represent only a single CN event
+   b. CN gains are not followed by CN losses and visa-versa
+
+Given these two assumptions, it should be clear that the higher the amplitude
+of the CNA, the later it must have occured in the SCNA history.  And thus, we
+can easily construct an initial deconstruction (SCNA history), and from that
+bin to compute the background rate of SCNA.
+
+This basically boostrapping the ping pong between background rate and
+deconstruction by making the assumptions necessarily to determine
+(deterministically!) a deconstruction (history).
+
+2. *induction step:* create a new background rate of SCNA from the current
+   history, which here amounts to simply a list of CN events.  So take
+   those SCNAs and bin them according by length and amplitude, and then use a
+   frequency from that.  Construct a new history using the new background
+   rate.
+
+Keep doing this until there is convergence (not proven that it always
+converges, but apparently it does "in practice").
+
+*Always assuming that SCNAs are independent*
+
+##### Gene GISTIC:
+
+In addition to doing the stuff above (actually, question -- what do you get out
+of all of this??), there is also Gene GISTIC.  We are going to score individual
+markers, by taking the log likelihood of observing focal events over i
+
+Say we have a marker `i`, we can compute a score on `i` by taking the log
+likelihood of all the focal SCNAs over `i`, given the arm-level SCNAs over `i`.
+We get the probability function from the steps above.  So the goal of the steps
+above is to generate that background rate of SCNA given length and amplitude.
+
+You can extend this to genes by taking the min of the above score on all the
+markers in a gene.
+
+**And then, and this is something I don't really understand, you sum this min
+score across all of your samples.**
+
+And that's GISTIC scores genes.
+
+**Still need to understand targeted regions of CNA.**
+
 ## Oncoprint
 
 ### What Was Done
