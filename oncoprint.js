@@ -341,8 +341,9 @@ var Oncoprint = function(wrapper, params) {
             .attr('width', label_width)
             .attr('height', getHeight());
 
+        // td-content is some parent td
         var body_wrap = table_wrap.append('td').append('div')
-            .style('width', $('#td-content').width() - 70 - label_width + 'px')     // buffer of, say, 100
+            .style('width', 1200 - 70 - label_width + 'px') // buffer of, say, 70
             .style('display', 'inline-block')
             .style('overflow-x', 'auto')
             .style('overflow-y', 'hidden');
@@ -381,7 +382,7 @@ var Oncoprint = function(wrapper, params) {
             redraw(visualized_samples, track, hugo);
         });
 
-        makeQtip();
+        //makeQtip();
 
         if (params.customize) {         // toggle the setup of the customization controls
             widthScrollerSetup();
@@ -405,23 +406,23 @@ var Oncoprint = function(wrapper, params) {
             var transition = d3.select(val);
 
             transition.selectAll('.sample')
-//                .transition()
-//                .duration(1000)
+                .transition()
+                .duration(1000)
                 .attr('transform', function(d) {
                     return translate(x(d.sample), y(hugo));
                 });
 
             var rect_width = getRectWidth();
             transition.selectAll('rect')
-//                .transition()
-//                .duration(1000)
+                .transition()
+                .duration(1000)
                 .attr('width', rect_width);
 
             var up_triangle = getTrianglePath(rect_width, true);
             var down_triangle = getTrianglePath(rect_width, false);
             transition.selectAll('.rppa')
-//                .transition()
-//                .duration(1000)
+                .transition()
+                .duration(1000)
                 .attr('d', function(d) {
                     var rppa = query.data(d.sample, hugo, 'rppa');
 
@@ -481,7 +482,7 @@ var Oncoprint = function(wrapper, params) {
             transition();
         });
 
-        makeQtip();
+        //makeQtip();
     };
 
 //  For the given oncoprint reference, returns the SVG Dom as string
