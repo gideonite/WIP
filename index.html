@@ -38,8 +38,8 @@
 <h1 >CN Pipeline</h1>
 <p class="caption" style="margin:40px">CBS &rarr; GISTIC</p>
 <ul>
-    <li>Circular Binary Segmentation (CBS)</li>
-    <li>Genomic Identification of Significant Targets in Cancer (GISTIC)</li>
+    <li><a href="http://biostatistics.oxfordjournals.org/content/5/4/557.full.pdf">Circular Binary Segmentation (CBS)</a></li>
+    <li><a href="http://genomebiology.com/content/pdf/gb-2011-12-4-r41.pdf">Genomic Identification of Significant Targets in Cancer (GISTIC)</a></li>
 </ul>
 </section>
 
@@ -61,21 +61,35 @@
 </section>
 
 <section>
-<u><b>C</b>ircular</u> / <u><b>B</b>inary <b>S</b>egmentation</u>
+<a href="http://biostatistics.oxfordjournals.org/content/5/4/557.full.pdf"><u><b>C</b>ircular</u> / <u><b>B</b>inary <b>S</b>egmentation</u></a>
 
-<p>Looking for breakpoints by taking MLE on a list of Gaussian distributions.</p>
+<p>Looking for breakpoints by taking MLE on a list of normally distributed
+signals strengths -- <br/> log(test / reference)</p>
 
+<div style="font-size:38px;">
 <ul>
     <li>Binary Segmentation: Searches for <b>single</b> breakpoints (<a
         href="http://projecteuclid.org/euclid.aos/1176343001">1975</a>)</li>
     <br/>
-    <li> Circular: Searches for <b>pairs</b> of breakpoints (a circle ends where it starts)</li>
+    <li> Circular: Searches for <b>pairs</b> of breakpoints (a circle ends
+    where it starts) (<a href="">2004</a>)</li>
 </ul>
+</div>
 </section>
 
 <section>
-<h1>GISTIC</h1>
-...say something about the algorithm.  Quote some its input.
+<a href="http://genomebiology.com/content/pdf/gb-2011-12-4-r41.pdf"><p style="margin-top:0px;"><u>GISTIC2.0</u></p></a>
+
+<b>Want:</b> A background "rate" of copy number variation (CNV), i.e. a probability
+distribution, <br/> &nbsp; <b>p(length, signal)</b>.
+<ul>
+<li>Iteratively compute a "CN history" and a corresponding <b>p</b> until
+convergence.</li>
+<li> Use <b>p</b> to see if there is selection for a probe (or a gene = list of
+probes).</li>
+
+</ul>
+
 </section>
 
 <section>

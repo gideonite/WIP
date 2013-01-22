@@ -119,7 +119,6 @@ happened?  It could have been just one event (the middle one), or it could have
 been two events.  Of course, you have more than just breakpoints, you also have
 amplitudes help you start to think about this...
 
-
 1. *base case:* Construct the base background rate by using a simplified
    deconstruction with the following two assumptions:
 
